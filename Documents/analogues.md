@@ -1,5 +1,5 @@
-#Analogues:
-##1) wix.com
+# Analogues:
+## 1) wix.com
 
 Wix.com is a cloud-based web development platform that was first developed 
 and popularized by the Israeli company also called Wix. It allows users to
