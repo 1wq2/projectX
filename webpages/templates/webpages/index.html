@@ -1,0 +1,11 @@
+{% if all_samples %}
+
+    <ul>
+        {% for sample in all_samples %}
+        <li><a href="/webpages/{{ sample.id }}/">{{ sample.sample_title }}</a></li>
+        {% endfor %}
+
+    </ul>
+{% else %}
+    <h3>You don't have any samples</h3>>
+{% endif %}
