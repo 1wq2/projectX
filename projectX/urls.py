@@ -18,14 +18,15 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 
+# the same include. WTF?
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^webpages/', include('webpages.urls')),
-    url(r'^', include('webpages.urls'))
+    #url(r'^webpages/', include('webpages.urls')),
+    url(r'^', include('webpages.urls')),
 
 ]
-#
-# if settings.DEBUG:
-#     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-#     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-#
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

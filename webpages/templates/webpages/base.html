@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <title>{% block title %}SwiftWeb{% endblock %}</title>
     {% load staticfiles %}
-    <link rel="shortcut icon" type="image/png" href="#"/> <!-- href="{%  static 'favicon.ico' %}"/>-->
+    <link rel="shortcut icon" type="image/png" href="#"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-      <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'webpages/style.css' %}"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -30,7 +30,7 @@
         <div class="collapse navbar-collapse" id="topNavBar">
             <ul class="nav navbar-nav">
                 <li class="{% block albums_active %}{% endblock %}"><a href="{% url 'webpages:index' %}"><span class="glyphicon glyphicon-th" aria-hidden="true"></span>&nbsp; Albums</a></li>
-                <!--<li class="{% block songs_active %}{% endblock %}"><a href="{% url 'webpages:songs' 'all' %}"><span class="glyphicon glyphicon-music" aria-hidden="true"></span>&nbsp; Songs</a></li>-->
+                {#                #}
             </ul>
             <form class="navbar-form navbar-left" role="search" method="get" action="{% url 'webpages:index' %}">
                 <div class="form-group">
@@ -40,7 +40,7 @@
             </form>
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="{% url 'webpages:logout_user' %}">
+                  <a href="#"> {#  <a href="{% url 'webpages:logout_user' %}">#}
                         <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout
                     </a>
                 </li>
