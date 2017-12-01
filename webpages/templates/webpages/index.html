@@ -2,7 +2,7 @@
 
 {% block body %}
         <ul>
-            {% for sample in object_list  %}
+            {% for sample in all_samples  %}
                 <li> <a href="{% url 'webpages:detail' sample.id %}"> {{ sample.sample_title }}</a></li>
 
             {% endfor  %}

@@ -8,12 +8,13 @@ from .models import Sample
 from django.http import HttpResponse
 from django.template import loader
 from django.views import generic
-from django.views.generic.edit import  CreateView, UpdateView, DeleteView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Sample
 
 
 class IndexView(generic.ListView):
-    template_name='webpages/index.html'
+    template_name = 'webpages/index.html'
+    context_object_name = 'all_samples'
 
     def get_queryset(self):
         return Sample.objects.all()
