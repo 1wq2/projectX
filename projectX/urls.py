@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 # the same include. WTF?
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    #url(r'^webpages/', include('webpages.urls')),
+    url(r'^webpages/', include('webpages.urls')),
     url(r'^', include('webpages.urls')),
 
 ]

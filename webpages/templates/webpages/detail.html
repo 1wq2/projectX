@@ -1,11 +1,11 @@
-<!--<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'webpages/base.html' %}
+{% block title %}Sample Details {% endblock %}
 
-</body>
-</html>
--->
+{% block body %}
+
+    <img src="{{ sample.sample_logo }}" style="width:250px;">
+
+    <h1> {{ sample.sample_title }} </h1>
+
+{% endblock %}
+
