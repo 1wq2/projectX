@@ -14,6 +14,13 @@ urlpatterns = [
     url(r'sample/add/$', views.SampleCreate.as_view(), name='sample-add'),
 
 ]
+
+
+
+
+
+
+
     # url(r'^$', views.index, name='index'),
     # #url(r'^webpages/', views.detail, name='detail'),
     #
