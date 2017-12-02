@@ -13,6 +13,12 @@ urlpatterns = [
     # /webpages/sample/add/
     url(r'sample/add/$', views.SampleCreate.as_view(), name='sample-add'),
 
+    # /webpages/sample/2/
+    url(r'sample/(?P<pk>[0-9]+)/$', views.SampleUpdate.as_view(), name='sample-update'),
+
+    # /webpages/sample/2/delete/
+    url(r'sample/(?P<pk>[0-9]+)/delete/$', views.SampleDelete.as_view(), name='sample-delete'),
+
 ]
 
 

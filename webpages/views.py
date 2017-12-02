@@ -9,7 +9,9 @@ from django.http import HttpResponse
 from django.template import loader
 from django.views import generic
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.core.urlresolvers import reverse_lazy
 from .models import Sample
+
 
 
 class IndexView(generic.ListView):
@@ -26,6 +28,15 @@ class DetailView(generic.DeleteView):
 class SampleCreate(CreateView):
     model = Sample
     fields = ['sample_logo', 'sample_title']
+
+class SampleUpdate(UpdateView):
+    model = Sample
+    fields = ['sample_logo', 'sample_title']
+
+class SampleDelete(DeleteView):
+    model = Sample
+    success_url = reverse_lazy('webpages:index')
+
 
 
 
