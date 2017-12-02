@@ -1,11 +1,57 @@
 {% extends 'webpages/base.html' %}
-{% block title %}Sample Details {% endblock %}
+{% block title %}{{ sample }}{% endblock %}
+{% block samples_active %}active{% endblock %}
 
 {% block body %}
+<div class="container-fluid songs-container">
 
-    <img src="{{ sample.sample_logo }}" style="width:250px;">
+    <div class="row">
 
-    <h1> {{ sample.sample_title }} </h1>
+        <!-- Left Sample Info -->
+        <div class="col-sm-4 col-md-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <a href="{% url 'webpages:detail' album.id %}">
+                        {% if sample.sample_logo %}
+                            <img src="{{ sample.sample_logo.url }}" class="img-responsive">
+                        {% else %}
+                            <h3>No image to display</h3>
+                        {% endif %}
+                    </a>
+                    <h1>{{ sample.sample_title }} </h1>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
 
 {% endblock %}
 
+
+
+
+
+
+
+
+
+
+
+
+<!-- ------------------------------- -->
+
+{#{% extends 'webpages/base.html' %}#}
+{#{% block title %}Sample Details {% endblock %}#}
+{##}
+{#{% block body %}#}
+{##}
+{#    <img src="{{ sample.sample_logo }}" style="width:250px;">#}
+{##}
+{#    <h1> {{ sample.sample_title }} </h1>#}
+{##}
+{#{% endblock %}#}
+{##}

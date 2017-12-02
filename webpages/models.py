@@ -4,7 +4,7 @@ from django.core.urlresolvers import reverse
 # Create your models here.
 
 class Sample(models.Model):
-    sample_logo = models.CharField(max_length=100)
+    sample_logo = models.FileField()
     sample_title = models.CharField(max_length=100)
 
     def get_absolute_url(self):
