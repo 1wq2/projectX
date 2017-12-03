@@ -11,7 +11,7 @@ from django.views import generic
 from django.views.generic import View
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.core.urlresolvers import reverse_lazy
 from .models import Sample
 from .forms import UserForm
@@ -60,9 +60,7 @@ class UserFormView(View):
         form = self.form_class(request.POST)
 
         if form.is_valid():
-
             user = form.save(commit=False)
-
             # cleaned(normalized) data
             username = form.cleaned_data['username']
             password = form.cleaned_data['password']
@@ -80,6 +78,14 @@ class UserFormView(View):
 
 
         return render(request, self.template_name, {'form': form})
+
+def logout_user(request):
+    logout(request)
+    form = UserForm(request.POST or None)
+    context = {
+        "form": form,
+    }
+    return render(request, 'webpages/login.html', context)
 
 
         #

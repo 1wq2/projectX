@@ -25,7 +25,7 @@ urlpatterns = [
     url(r'sample/(?P<pk>[0-9]+)/delete/$', views.SampleDelete.as_view(), name='sample-delete'),
 
     #url(r'^login_user/$', views.login_user, name='login_user'),
-    #url(r'^logout_user/$', views.logout_user, name='logout_user'),
+    url(r'^logout_user/$', views.logout_user, name='logout_user'),
 
 ]
 
