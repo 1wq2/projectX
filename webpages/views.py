@@ -18,6 +18,9 @@ from .forms import UserForm
 
 
 
+class VisitorView(generic.TemplateView):
+    template_name = 'webpages/base_visitor.html'
+
 class IndexView(generic.ListView):
     template_name = 'webpages/index.html'
     context_object_name = 'all_samples'
