@@ -6,6 +6,6 @@ from .import views
 urlpatterns = [
 
     # HOME PAGE!!!
-    url(r'^$', views.VisitorView.as_view(), name='index'),
+    url(r'^$', views.VisitorView.as_view(), name='base_visitor'),
 
 ]
