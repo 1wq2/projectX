@@ -92,9 +92,9 @@ def login_user(request):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                #samples = Sample.objects.filter(user=request.user)
-                #return render(request, 'webpages/index.html', {'samples': samples})
-                return redirect('webpages:index')
+                samples = Sample.objects.filter(user=request.user)
+                return render(request, 'webpages/index.html', {'samples': samples})
+                #return redirect('webpages:index')
             else:
                 return render(request, 'webpages/login.html', {'error_message': 'Your account has been disabled'})
         else:

@@ -1,9 +1,11 @@
 from django.db import models
 from django.core.urlresolvers import reverse
+from django.contrib.auth.models import Permission, User
 
 # Create your models here.
 
 class Sample(models.Model):
+    user = models.ForeignKey(User, default=1)
     sample_logo = models.FileField()
     sample_title = models.CharField(max_length=100)
 

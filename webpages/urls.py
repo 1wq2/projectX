@@ -28,6 +28,7 @@ urlpatterns = [
     url(r'sample/(?P<pk>[0-9]+)/delete/$', views.SampleDelete.as_view(), name='sample-delete'),
 
 
+
 ]
 
 
