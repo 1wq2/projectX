@@ -74,9 +74,6 @@ class UserFormView(View):
                 if user.is_active:
                     login(request, user)
                     return redirect('webpages:index')
-
-
-
         return render(request, self.template_name, {'form': form})
 
 def logout_user(request):
@@ -87,7 +84,22 @@ def logout_user(request):
     }
     return render(request, 'webpages/login.html', context)
 
-
+def login_user(request):
+    if request.method == "POST":
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            if user.is_active:
+                login(request, user)
+                #samples = Sample.objects.filter(user=request.user)
+                #return render(request, 'webpages/index.html', {'samples': samples})
+                return redirect('webpages:index')
+            else:
+                return render(request, 'webpages/login.html', {'error_message': 'Your account has been disabled'})
+        else:
+            return render(request, 'webpages/login.html', {'error_message': 'Invalid login'})
+    return render(request, 'webpages/login.html')
         #
         #
         # def logout_user(request):

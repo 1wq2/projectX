@@ -36,16 +36,8 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-                <li class="">
-                    <a href="{% url 'webpages:register' %} ">
-                        &nbsp; Registration
-                    </a>
-                </li>
-                <li>
-                  <a href="#"> {#  <a href="{% url 'webpages:logout_user' %}">#}
-                        Log in
-                    </a>
-                </li>
+                <li class="{% block register_active %}{% endblock %}"><a href="{% url 'webpages:register' %}">Register</a></li>
+                <li class="{% block login_active %}{% endblock %}"><a href="{% url 'webpages:login_user' %}">Log In</a></li>
             </ul>
         </div>
 
