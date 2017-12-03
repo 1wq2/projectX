@@ -1,16 +1,20 @@
-from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
 from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404
 from django.db.models import Q
-from .forms import UserForm
+
 from .models import Sample
 from django.http import HttpResponse
 from django.template import loader
+
 from django.views import generic
+from django.views.generic import View
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login
 from django.core.urlresolvers import reverse_lazy
 from .models import Sample
+from .forms import UserForm
 
 
 
@@ -36,6 +40,42 @@ class SampleUpdate(UpdateView):
 class SampleDelete(DeleteView):
     model = Sample
     success_url = reverse_lazy('webpages:index')
+
+class UserFormView(View):
+    form_class = UserForm
+    template_name = 'webpages/registration_form.html'
+
+    #display blank form
+    def get(self, request):
+        form = self.form_class(None)
+        return render(request, self.template_name, {'form': form})
+
+
+    def post(self, request):
+        form = self.form_class(request.POST)
+
+        if form.is_valid():
+
+            user = form.save(commit=False)
+
+            # cleaned(normalized) data
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            user.set_password(password)
+            user.save()
+
+            # returns User objects if correct
+            user = authenticate(username=username, password=password)
+
+            if user is not None:
+                if user.is_active:
+                    login(request, user)
+                    return redirect('webpages:index')
+
+
+
+        return render(request, self.template_name, {'form': form})
+
 
 
 
