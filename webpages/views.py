@@ -23,14 +23,20 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 class VisitorView(generic.TemplateView):
     template_name = 'webpages/base_visitor.html'
 
-class IndexView(generic.ListView):
+class IndexView(LoginRequiredMixin, generic.ListView):
+    login_url = 'webpages/login.html'
+    redirect_field_name = 'webpages/login.html'
+
     template_name = 'webpages/index.html'
     context_object_name = 'all_samples'
 
     def get_queryset(self):
         return Sample.objects.all()
 
-class DetailView(generic.DeleteView):
+class DetailView(LoginRequiredMixin,generic.DeleteView):
+    login_url = 'webpages/login.html'
+    redirect_field_name = 'webpages/login.html'
+
     model = Sample
     template_name = 'webpages/detail.html'
 
