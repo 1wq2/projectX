@@ -28,7 +28,7 @@ class IndexView(LoginRequiredMixin, generic.ListView):
     redirect_field_name = 'webpages/login.html'
 
     template_name = 'webpages/index.html'
-    context_object_name = 'all_samples'
+    context_object_name = 'samples'
 
     def get_queryset(self):
         return Sample.objects.all()
