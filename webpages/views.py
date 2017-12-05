@@ -17,6 +17,77 @@ from .models import Sample
 from .forms import UserForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 
+#############################
+
+from django.utils.http import is_safe_url
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import REDIRECT_FIELD_NAME, login as auth_login, logout as auth_logout
+from django.utils.decorators import method_decorator
+from django.views.decorators.cache import never_cache
+from django.views.decorators.csrf import csrf_protect
+from django.views.decorators.debug import sensitive_post_parameters
+from django.views.generic import FormView, RedirectView
+
+from django.contrib.auth import login
+from django.contrib.auth.forms import AuthenticationForm
+# handles Authentication the user
+#from django.core.urlresolvers import reverselazy
+# redirect based on url name after authentication success
+#from django.forms import generic
+
+#
+# class LoginView(generic.FormView):
+#     from_class = AuthenticationForm  # specify the form you're using
+#     success_url = reverse_lazy("webpages/index.html")
+#     template_name = "webpages/login.html"
+#
+#     def get_form(self, form_class=None):  # check the form
+#         if form_class is None:
+#             form_class = self.get_form_class()
+#         return form_class(self.request, **self.get_form_kwargs())
+#
+#     def form_valid(self, form):  # check if form is valid
+#         login(self.request, form.get_user())
+#         return super().form_valid(form)
+#
+# class LogoutView(generic.RedirectView):
+#     url = reverse_lazy("webpages/index.html")
+#
+#     def get(self, request, *args, **kwargs):
+#         logout(request)
+#         return super().get(request, *args, **kwargs)
+###############################
+
+
+# def logout_user(request):
+#     logout(request)
+#     form = UserForm(request.POST or None)
+#     context = {
+#         "form": form,
+#     }
+#     return render(request, 'webpages/login.html', context)
+#
+# def login_user(request):
+#     if request.method == "POST":
+#         username = request.POST['username']
+#         password = request.POST['password']
+#         user = authenticate(username=username, password=password)
+#         if user is not None:
+#             if user.is_active:
+#                 login(request, user)
+#                 samples = Sample.objects.filter(user=request.user)
+#                 return render(request, 'webpages/index.html', {'samples': samples})
+#                 #return redirect('webpages:index')
+#             else:
+#                 return render(request, 'webpages/login.html', {'error_message': 'Your account has been disabled'})
+#         else:
+#             return render(request, 'webpages/login.html', {'error_message': 'Invalid login'})
+#     return render(request, 'webpages/login.html')
+
+
+
+
+
 
 
 
@@ -75,31 +146,7 @@ class UserFormView(View):
                     login(request, user)
                     return redirect('webpages:index')
         return render(request, self.template_name, {'form': form})
-
-def logout_user(request):
-    logout(request)
-    form = UserForm(request.POST or None)
-    context = {
-        "form": form,
-    }
-    return render(request, 'webpages/login.html', context)
-
-def login_user(request):
-    if request.method == "POST":
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(username=username, password=password)
-        if user is not None:
-            if user.is_active:
-                login(request, user)
-                #samples = Sample.objects.filter(user=request.user)
-                #return render(request, 'webpages/index.html', {'samples': samples})
-                return redirect('webpages:index')
-            else:
-                return render(request, 'webpages/login.html', {'error_message': 'Your account has been disabled'})
-        else:
-            return render(request, 'webpages/login.html', {'error_message': 'Invalid login'})
-    return render(request, 'webpages/login.html')
+#
         #
         #
         # def logout_user(request):
