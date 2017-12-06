@@ -40,6 +40,7 @@ class IndexView(LoginRequiredMixin, generic.ListView):
     context_object_name = 'samples' #all_samples
 
     def get_queryset(self):
+        print(self.request.user)
         return Sample.objects.filter(user=self.request.user)
 
 
@@ -50,15 +51,39 @@ class DetailView(LoginRequiredMixin, generic.DeleteView):
     model = Sample
     template_name = 'webpages/detail.html'
 
-class SampleCreate(CreateView):
+
+
+
+class SampleCreate(LoginRequiredMixin, CreateView):
+    login_url = '/webpages/login_user'
+    redirect_field_name = 'redirect_to'
+
     model = Sample
     fields = ['sample_logo', 'sample_title']
 
-class SampleUpdate(UpdateView):
+    def form_valid(self, form):
+        object = form.save(commit=False)
+        object.user = self.request.user
+        object.save()
+        return super(SampleCreate, self).form_valid(form)
+
+class SampleUpdate(LoginRequiredMixin, UpdateView):
+    login_url = '/login_user/'
+    redirect_field_name = 'redirect_to'
+
     model = Sample
     fields = ['sample_logo', 'sample_title']
 
-class SampleDelete(DeleteView):
+    def form_valid(self, form):
+        object = form.save(commit=False)
+        object.user = self.request.user
+        object.save()
+        return super(SampleUpdate, self).form_valid(form)
+
+class SampleDelete(LoginRequiredMixin, DeleteView):
+    login_url = '/login_user/'
+    redirect_field_name = 'redirect_to'
+
     model = Sample
     success_url = reverse_lazy('webpages:index')
 
