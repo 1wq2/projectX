@@ -36,14 +36,17 @@ class IndexView(LoginRequiredMixin, generic.ListView):
     login_url = '/webpages/login_user'
     redirect_field_name = 'redirect_to'
 
-
     template_name = 'webpages/index.html'
-    context_object_name = 'all_samples'
+    context_object_name = 'samples' #all_samples
 
     def get_queryset(self):
-        return Sample.objects.all()
+        return Sample.objects.filter(user=self.request.user)
 
-class DetailView(generic.DeleteView):
+
+class DetailView(LoginRequiredMixin, generic.DeleteView):
+    login_url = '/webpages/login_user'
+    redirect_field_name = 'redirect_to'
+
     model = Sample
     template_name = 'webpages/detail.html'
 
