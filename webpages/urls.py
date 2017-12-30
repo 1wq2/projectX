@@ -26,7 +26,10 @@ urlpatterns = [
     url(r'^(?P<pk>[0-9]+)/$', views.DetailView.as_view(), name='detail'),
 
     # /webpages/sample/add/
-    url(r'sample/add/$', views.SampleCreate.as_view(), name='sample-add'),
+    url(r'sample/add/$', views.SampleAdd.as_view(), name='sample-add'),
+
+    # /webpages/create/
+    url(r'createSite/$', views.createSite.as_view(), name='createSite'),
 
     # /webpages/sample/2/
     url(r'sample/(?P<pk>[0-9]+)/$', views.SampleUpdate.as_view(), name='sample-update'),

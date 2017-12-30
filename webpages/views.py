@@ -13,7 +13,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.core.urlresolvers import reverse_lazy
-from .models import Sample
+from .models import Sample, Create
 from .forms import UserForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 
@@ -52,9 +52,15 @@ class DetailView(LoginRequiredMixin, generic.DeleteView):
     template_name = 'webpages/detail.html'
 
 
+class createSite(LoginRequiredMixin, CreateView):
+    login_url = '/webpages/login_user'
+    redirect_field_name = 'redirect_to'
+
+    model = Create
+    fields = ['domain_title']
 
 
-class SampleCreate(LoginRequiredMixin, CreateView):
+class SampleAdd(LoginRequiredMixin, CreateView):
     login_url = '/webpages/login_user'
     redirect_field_name = 'redirect_to'
 
@@ -65,7 +71,7 @@ class SampleCreate(LoginRequiredMixin, CreateView):
         object = form.save(commit=False)
         object.user = self.request.user
         object.save()
-        return super(SampleCreate, self).form_valid(form)
+        return super(SampleAdd, self).form_valid(form)
 
 class SampleUpdate(LoginRequiredMixin, UpdateView):
     login_url = '/login_user/'
