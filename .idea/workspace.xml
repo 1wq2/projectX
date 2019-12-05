@@ -2,21 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62490182-7e5d-41d3-bbeb-a8957944091e" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Documents/Diagrams/forms_class_diagram.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Documents/Diagrams/models_class_diagram.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Documents/Diagrams/views_class_diagram.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Documents/Samples/samples.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/projectX.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/projectX.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Documents/Reqs_upd.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Documents/kr/Images/Deployment_diagram.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Documents/kr/Images/Samples_state_diagram.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Documents/kr/Images/components_diagram.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Documents/kr/Images/sequence_diagram.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Documents/kr/kr.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documents/Diagrams/class_diagram.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documents/use_case_diagram.png" beforeDir="false" afterPath="$PROJECT_DIR$/Documents/Diagrams/use_case_diagram.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpages/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/webpages/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documents/Diagrams/activity_diagram.png" beforeDir="false" afterPath="$PROJECT_DIR$/Documents/kr/Images/activity_diagram.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documents/Diagrams/views_class_diagram.png" beforeDir="false" afterPath="$PROJECT_DIR$/Documents/kr/Images/views_class_diagram.png" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -80,32 +75,30 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1U7xz5jux1lLnwL1MLg1LKv6dbY" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Documents/Diagrams" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Documents/kr/Images" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.uml" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Documents/kr/Images" />
+      <recent name="$PROJECT_DIR$/Documents/Samples" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Documents/kr/Images" />
+      <recent name="$PROJECT_DIR$/Documents/kr" />
+      <recent name="$PROJECT_DIR$/Documents" />
       <recent name="$PROJECT_DIR$/Documents/Diagrams" />
       <recent name="$PROJECT_DIR$/" />
-      <recent name="C:\Users\user\Desktop\projectX\webpages" />
-      <recent name="C:\Users\user\Desktop\projectX\webpages\templates\webpages" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Python.views">
     <configuration name="views" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -160,6 +153,18 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -170,7 +175,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1511344562157</updated>
-      <workItem from="1574723201192" duration="3441000" />
+      <workItem from="1574723201192" duration="4078000" />
     </task>
     <servers />
   </component>
@@ -199,7 +204,10 @@
       </map>
     </option>
   </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/projectX$views.coverage" NAME="views Coverage Results" MODIFIED="1574725524643" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/webpages" />
+  <component name="WindowStateProjectService">
+    <state x="357" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1575398120609">
+      <screen x="37" y="27" width="1329" height="741" />
+    </state>
+    <state x="357" y="224" key="com.intellij.ide.util.TipDialog/37.27.1329.741@37.27.1329.741" timestamp="1575398120609" />
   </component>
 </project>
