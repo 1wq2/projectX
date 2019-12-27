@@ -6,7 +6,7 @@
 1.1 [Назначение](#appointment)  
 1.2 [Бизнес-требования](#business_requirements)  
 1.2.1 [Возможности бизнеса](#business_opportunities)  
-1.3 [Аналоги](#analogues) 
+1.3 [Аналоги](#analogues)\
 2 [Требования пользователя](#user_requirements)  
 2.1 [Программные интерфейсы](#software_interfaces)  
 2.2 [Интерфейс пользователя](#user_interface)  
@@ -17,7 +17,7 @@
 3.2 [Нефункциональные требования](#non-functional_requirements)  
 3.2.1 [Атрибуты качества](#quality_attributes)  
 3.2.2 [Требования к безопасности](#security_requirements)
-4. 
+
 
 <a name="intro"/>
 
