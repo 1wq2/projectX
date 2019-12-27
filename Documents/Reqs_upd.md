@@ -6,6 +6,7 @@
 1.1 [Назначение](#appointment)  
 1.2 [Бизнес-требования](#business_requirements)  
 1.2.1 [Возможности бизнеса](#business_opportunities)  
+1.3 [Аналоги](#analogues) 
 2 [Требования пользователя](#user_requirements)  
 2.1 [Программные интерфейсы](#software_interfaces)  
 2.2 [Интерфейс пользователя](#user_interface)  
@@ -15,7 +16,8 @@
 3.1 [Функциональные требования](#functional_requirements)  
 3.2 [Нефункциональные требования](#non-functional_requirements)  
 3.2.1 [Атрибуты качества](#quality_attributes)  
-3.2.2 [Требования к безопасности](#security_requirements)  
+3.2.2 [Требования к безопасности](#security_requirements)
+4. 
 
 <a name="intro"/>
 
@@ -43,6 +45,9 @@
 Достаточно много людей нуждаются в собственной веб-странице как для личного использования, 
 так и для выполнения своих бизнес-задач. Многие предлагаемые продукты требуют большой кастемизации,
 временных и денежных затрат. 
+
+### 1.3 Аналоги
+Обзор аналогов представлен в документе [analogues](https://github.com/1wq2/projectX/blob/master/Documents/analogues.md).
 
 <a name="user_requirements"/>
 
