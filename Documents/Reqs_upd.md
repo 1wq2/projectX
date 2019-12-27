@@ -14,6 +14,7 @@
 2.4 [Предположения и зависимости](#assumptions_and_dependencies)  
 3 [Системные требования](#system_requirements)  
 3.1 [Функциональные требования](#functional_requirements)  
+3.1.1 [Аутентификация](#authentication)  
 3.2 [Нефункциональные требования](#non-functional_requirements)  
 3.2.1 [Атрибуты качества](#quality_attributes)  
 3.2.2 [Требования к безопасности](#security_requirements)
@@ -117,6 +118,13 @@
 7. Просмотр страницы
 
 <a name="non-functional_requirements"/>
+
+
+<a name="authentication"/>
+
+### 3.1.1 Аутентификация
+
+Обзор аутентификации представлен в документе [authentication](https://github.com/1wq2/projectX/blob/master/Documents/Flow%20of%20events/Authentication.md).
 
 ## 3.2 Нефункциональные требования
 
