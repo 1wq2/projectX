@@ -46,7 +46,9 @@
 так и для выполнения своих бизнес-задач. Многие предлагаемые продукты требуют большой кастемизации,
 временных и денежных затрат. 
 
-### 1.3 Аналоги
+<a name="analogues"/>
+
+## 1.3 Аналоги
 Обзор аналогов представлен в документе [analogues](https://github.com/1wq2/projectX/blob/master/Documents/analogues.md).
 
 <a name="user_requirements"/>
